@@ -1,28 +1,30 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+* {
   margin: 0;
-  background: #f9f9f9;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.6);
   padding: 15px 0;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
 }
 
 .profile-info {
@@ -35,129 +37,145 @@ header {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #4a90e2;
+  border: 2px solid #fff;
 }
 
-h1 {
-  font-size: 1.8rem;
-  margin: 0;
+header h1 {
+  font-size: 24px;
+}
+
+header p {
+  font-size: 14px;
+  color: #ddd;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+  gap: 20px;
 }
 
-nav a {
+nav ul li a {
   text-decoration: none;
-  color: #555;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #4a90e2;
-}
-
-main {
-  padding-top: 20px;
-}
-
-.section {
-  padding: 60px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #4a90e2;
-}
-
-.section-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section p,
-.section ul {
-  text-align: left;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-.social-links {
-  margin-top: 20px;
-}
-
-.social-links a {
-  font-size: 28px;
-  margin: 0 12px;
-  color: #555;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #4a90e2;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
   color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
 }
 
 #menuToggle {
   display: none;
   background: none;
   border: none;
-  font-size: 24px;
-  cursor: pointer;
+  font-size: 22px;
+  color: #fff;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn,
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #36d1dc, #5b86e5);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.btn:hover,
+.back-btn:hover {
+  opacity: 0.85;
+}
+
+.section {
+  padding: 40px 20px;
+}
+
+.section-container {
+  width: 80%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 22px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  color: #ffd700;
 }
 
 @media (max-width: 768px) {
-  .container {
-    justify-content: center;
-  }
-
-  .profile-info {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-
-  #menuToggle {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 25px;
-  }
-
   nav ul {
     display: none;
     flex-direction: column;
-    width: 100%;
     gap: 10px;
-    text-align: center;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    border-radius: 8px;
   }
 
   nav ul.show {
     display: flex;
+  }
+
+  #menuToggle {
+    display: block;
   }
 }
